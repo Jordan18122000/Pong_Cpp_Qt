@@ -1,0 +1,13 @@
+#ifndef CONFIGURATION_H
+#define CONFIGURATION_H
+
+#define BARRE_WIDTH 15
+#define BARRE_HEIGHT 80
+
+#define PLANCHE_WIDTH 800
+#define PLANCHE_HEIGHT 600
+
+#define BALLE_WIDTH 10
+#define BALLE_HEIGHT 10
+
+#endif // CONFIG_H
