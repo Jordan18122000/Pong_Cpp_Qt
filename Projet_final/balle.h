@@ -20,21 +20,25 @@ class Balle: public QObject,public QGraphicsEllipseItem
 
 public:
     Balle();
-
+    void Reset(bool winner);
     void relaunch();
     bool canLaunch();
 
     void setBarres(Barre *player, Barre *computer);
-    bool insideBoard();
+    bool insideBoard(int dx);
 //  QRectF boundingRect() const override;
     int width();
     int height();
     int speed();
+    int windowSizeX;
+    int windowsSizeY;
 
+signals:
+    void resetBall();
 public slots:
     void move();
     //test2
-     void resetBall();
+    // void resetBall();
     //
 
 
