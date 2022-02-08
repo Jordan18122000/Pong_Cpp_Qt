@@ -9,6 +9,8 @@ Barre::Barre()
 
 void Barre::move(Barre::MoveType moveType)
 {
+    //nous permet en fonction de la touche utilisé faire varier notre axe Y
+    // en fonctiondes position retourner sur x et y
     if(validMove(moveType) && moveType == UP)
         setPos(x(), y() - m_moveStep);
     else if(validMove(moveType) && moveType == DOWN)
@@ -17,13 +19,18 @@ void Barre::move(Barre::MoveType moveType)
 
 void Barre::randomMove(qreal ballY)
 {
-    MoveType m = ((y() - ballY) > -10) ? UP : DOWN;
+        //QRandomGenerator::global()->bounded(-40,40) --> permet de générer notre erreur
+        //sur Y de manière aléa
+    MoveType m = ((y() - ballY+(QRandomGenerator::global()->bounded(-40,40))) > -10) ? UP : DOWN;
 //  MoveType moveType = static_cast<MoveType>(-(qrand() % 2) + 1);
     move(m);
 }
 
 void Barre::keyReleaseEvent(QKeyEvent *event)
 {
+    //cette fonction nous permet de gerer les mouvment en fonction du clavier
+    //nous avons flèche du haut pour move Up
+    //et pour flèche du bas nous avons move Down
     switch (event->key()) {
     case Qt::Key_Up:
         move(UP);
@@ -51,4 +58,12 @@ int Barre::width()
 int Barre::height()
 {
     return m_height;
+}
+
+//cette fonction nous permet d'init lors d'un reset
+//une position pour notre barre players
+
+void Barre::Barre_reset(int y)
+{
+ //setPos(5,y);
 }
