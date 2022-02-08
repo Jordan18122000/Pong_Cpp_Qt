@@ -98,10 +98,6 @@ MainWindow::~MainWindow()
 }
 
 ///////////
-void MainWindow::resetGame()
-{
-    this->update();
-}
 
 
 void MainWindow::on_actionApropos_triggered()
