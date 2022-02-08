@@ -8,6 +8,7 @@
 #include <QMessageBox>
 #include "score.h"
 
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow),
@@ -15,9 +16,12 @@ MainWindow::MainWindow(QWidget *parent) :
     score(*new Score())
 {
     ui->setupUi(this);
-    //permet de détruire la barre en blanc en bas
-    delete ui->statusBar;
+
     // create a game scene
+
+
+
+    //this->setStyleSheet("{background-image:url(:/images/img.jpg);}");
 
     scene->setSceneRect(0, 0, width(), height());
     // add game objects
@@ -102,7 +106,7 @@ void MainWindow::resetGame()
 
 void MainWindow::on_actionApropos_triggered()
 {
-    QMessageBox::information(this, "A propos", "Il s'agit d'un projet QT en cours de dévelopement par CLEMENT J. et CARAYON J.", "OK");
+    QMessageBox::information(this, "A propos", "Il s'agit d'un projet QT en cours de dévelopement par CLEMENT J. CARAYON J. et COM-NOUGUE G.", "OK");
 }
 
 void MainWindow::keyPressEvent(QKeyEvent *event)
