@@ -6,6 +6,7 @@
 #include<QGraphicsRectItem>
 #include <QObject>
 #include <QKeyEvent>
+#include <QRandomGenerator>
 
 
 class Barre: public QObject, public QGraphicsRectItem
@@ -24,6 +25,7 @@ public:
     void randomMove(qreal ballY);
     int height();
     int width();
+    void Barre_reset(int y);
 
 protected:
     int m_height = 100;

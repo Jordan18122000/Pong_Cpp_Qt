@@ -9,7 +9,7 @@ class GameManager
 public:
     GameManager();
     void move(Barre *computer);
-
+    void resetpos_cpu(Barre *computer);
 protected:
     qreal m_speed;
 };
