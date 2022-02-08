@@ -2,6 +2,9 @@
 <ui version="4.0">
  <class>MainWindow</class>
  <widget class="QMainWindow" name="MainWindow">
+  <property name="windowModality">
+   <enum>Qt::ApplicationModal</enum>
+  </property>
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -17,14 +20,35 @@
    <widget class="QGraphicsView" name="gameView">
     <property name="geometry">
      <rect>
-      <x>270</x>
-      <y>160</y>
-      <width>256</width>
-      <height>192</height>
+      <x>0</x>
+      <y>0</y>
+      <width>801</width>
+      <height>551</height>
      </rect>
     </property>
     <property name="contextMenuPolicy">
      <enum>Qt::NoContextMenu</enum>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">border-image: url(:/images/background.png);</string>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Plain</enum>
+    </property>
+    <property name="verticalScrollBarPolicy">
+     <enum>Qt::ScrollBarAlwaysOff</enum>
+    </property>
+    <property name="horizontalScrollBarPolicy">
+     <enum>Qt::ScrollBarAlwaysOff</enum>
+    </property>
+    <property name="interactive">
+     <bool>true</bool>
+    </property>
+    <property name="renderHints">
+     <set>QPainter::Antialiasing|QPainter::LosslessImageRendering|QPainter::SmoothPixmapTransform|QPainter::TextAntialiasing</set>
+    </property>
+    <property name="resizeAnchor">
+     <enum>QGraphicsView::AnchorViewCenter</enum>
     </property>
    </widget>
   </widget>
@@ -34,7 +58,7 @@
      <x>0</x>
      <y>0</y>
      <width>800</width>
-     <height>20</height>
+     <height>21</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuHelp">
@@ -54,7 +78,6 @@
    <addaction name="actionApropos"/>
    <addaction name="actionComment_jouer"/>
   </widget>
-  <widget class="QStatusBar" name="statusBar"/>
   <action name="actionApropos">
    <property name="text">
     <string>A propos</string>

@@ -4,7 +4,7 @@
 Barre::Barre()
 {
     setRect(0, 0, m_width, m_height);
-    setBrush((QBrush)Qt::black);
+    setBrush((QBrush)Qt::red);
 }
 
 void Barre::move(Barre::MoveType moveType)
