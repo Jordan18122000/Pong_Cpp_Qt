@@ -19,7 +19,6 @@ class MainWindow : public QMainWindow
 {
     Q_OBJECT
 private:
-     void resetGame();
      bool WaitKey;
      bool resetIsOK = true;
 
