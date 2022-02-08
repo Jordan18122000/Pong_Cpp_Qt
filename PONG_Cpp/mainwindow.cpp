@@ -113,9 +113,9 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
 {
     //fonction qui permet de gerer notre barre espace
     switch(event->key())
-    {
-        case Qt::Key_Space:
+    {        case Qt::Key_Space:
             qDebug() <<"je suis la )";
+
             WaitKey = false;
             break;
         default:
@@ -147,7 +147,6 @@ void MainWindow::reset_balle_position()
         }
 
         WaitKey = true;//notre action a été réalisé
-
         //on reset à la position init de la barre par la hauteur de la fentre / 2 - la hauteur de la barre
         player->Barre_reset(scene->height()/2 - player->height());
         //on reset notre barre cpu
