@@ -17,31 +17,29 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    // create a game scene
+    // Création d'une scène de jeu
 
     scene->setSceneRect(0, 0, width(), height());
     // add game objects
-    //position barre init joueur
+    //Positionne la barre du joueur en mode init
     player->setPos(5, (height() / 2.0) - player->height());
     player->setBrush(Qt::blue);
     player->setFlag(QGraphicsItem::ItemIsFocusable);
     player->setFocus();
 
-    //position init de nombre barre cpu
+    //Positionne la barre de l'ordinateur en mode init
     computer->setPos(width() - computer->width() - 5, (height() / 2) - computer->height());
     m_balle.setBarres(player, computer);
     m_balle.setPos(this->size().width()/ 2, this->size().height()/2);
 
     scene->addItem(&score);
-
     Findujeu *findujeu= new Findujeu();
     scene->addItem(findujeu);
-
     scene->addItem(player);
     scene->addItem(computer);
     scene->addItem(&m_balle);
 
-    // Créer un gameView
+    // Assignation des éléments de la scène dans notre widget
     ui->gameView->setScene(scene);
     ui->gameView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     ui->gameView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
@@ -82,7 +80,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
     //fonction qui permet de gerer notre barre espace
     switch(event->key())
     {        case Qt::Key_Space:
-            qDebug() <<"je suis la )";
+            qDebug() <<"Barre Espace appuyée";
 
             WaitKey = false;
             break;
@@ -157,4 +155,3 @@ void MainWindow::on_actionAide_triggered()
     QMessageBox::information(this, "Aide", "En cas de problème pour bouger votre raquette, appuyez sur TAB afin de reprendre le contrôle de celle-ci.", "OK");
 
 }
-
