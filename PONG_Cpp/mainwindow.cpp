@@ -19,10 +19,6 @@ MainWindow::MainWindow(QWidget *parent) :
 
     // create a game scene
 
-
-
-    //this->setStyleSheet("{background-image:url(:/images/img.jpg);}");
-
     scene->setSceneRect(0, 0, width(), height());
     // add game objects
     //position barre init joueur
@@ -31,21 +27,9 @@ MainWindow::MainWindow(QWidget *parent) :
     player->setFlag(QGraphicsItem::ItemIsFocusable);
     player->setFocus();
 
-    /*
-    Paddle *player2 = new Paddle();
-    player->setPos(5, (height() / 2.0) - player2->height());
-    player->setBrush(Qt::blue);
-    player->setFlag(QGraphicsItem::ItemIsFocusable);
-    player->setFocus();
-
-    */
-
     //position init de nombre barre cpu
     computer->setPos(width() - computer->width() - 5, (height() / 2) - computer->height());
-
-    //Balle *balle = new Balle();
     m_balle.setBarres(player, computer);
-   // m_balle.setPos(player->x() + m_balle.width() + 12, player->y() + player->height() / 2);
     m_balle.setPos(this->size().width()/ 2, this->size().height()/2);
 
     scene->addItem(&score);
@@ -57,36 +41,24 @@ MainWindow::MainWindow(QWidget *parent) :
     scene->addItem(computer);
     scene->addItem(&m_balle);
 
-    /*
-    Ball *ball = new Ball();
-    ball->setPaddles(player, player2);
-    ball->setPos(player->x() + ball->width() + 12, player->y() + player->height() / 2);
-    ball->setPos(player2->x() + ball->width() + 12, player2->y() + player2->height() / 2);///////////////
-
-    scene->addItem(player);
-   // scene->addItem(computer);
-    scene->addItem(player2);
-    scene->addItem(ball);
-    */
-
-    // create a game view
+    // Créer un gameView
     ui->gameView->setScene(scene);
     ui->gameView->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     ui->gameView->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff);
     ui->gameView->setGeometry(0, 0, width(), height());
     ui->gameView->setFixedSize(width(), height());
 
-    //connect balle pour faire appel au reset balle et au reset position
+    //Connecte balle pour faire appel au reset balle et au reset position.
     connect(&m_balle, &Balle::resetBall,
             this, &MainWindow::reset_balle_position);
 
-    //on connect notre score pour compter les points et avoir la victoire
+    //On connecte notre score pour compter les points et avoir la victoire.
     connect(&score, &Score::cpuWinSignal,
             this, &MainWindow::cpuWin);
     connect(&score, &Score::playerWinSignal,
             this, &MainWindow::playerWin);
 
-    //on initialise la variable qui contient la longueur de la fenetre
+    //On initialise la variable qui contient la longueur de la fenetre.
     m_balle.windowSizeX = this->size().width();
     m_balle.windowsSizeY = this->size().height();
 

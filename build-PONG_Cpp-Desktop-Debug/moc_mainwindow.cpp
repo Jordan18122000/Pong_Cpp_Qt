@@ -33,17 +33,17 @@ QT_MOC_LITERAL(0, 10), // "MainWindow"
 QT_MOC_LITERAL(11, 7), // "partWin"
 QT_MOC_LITERAL(19, 0), // ""
 QT_MOC_LITERAL(20, 26), // "on_actionApropos_triggered"
-QT_MOC_LITERAL(47, 20), // "reset_balle_position"
-QT_MOC_LITERAL(68, 32), // "on_actionComment_jouer_triggered"
-QT_MOC_LITERAL(101, 9), // "playerWin"
-QT_MOC_LITERAL(111, 6), // "cpuWin"
-QT_MOC_LITERAL(118, 23) // "on_actionAide_triggered"
+QT_MOC_LITERAL(47, 32), // "on_actionComment_jouer_triggered"
+QT_MOC_LITERAL(80, 23), // "on_actionAide_triggered"
+QT_MOC_LITERAL(104, 20), // "reset_balle_position"
+QT_MOC_LITERAL(125, 9), // "playerWin"
+QT_MOC_LITERAL(135, 6) // "cpuWin"
 
     },
     "MainWindow\0partWin\0\0on_actionApropos_triggered\0"
-    "reset_balle_position\0"
     "on_actionComment_jouer_triggered\0"
-    "playerWin\0cpuWin\0on_actionAide_triggered"
+    "on_actionAide_triggered\0reset_balle_position\0"
+    "playerWin\0cpuWin"
 };
 #undef QT_MOC_LITERAL
 
@@ -93,11 +93,11 @@ void MainWindow::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, 
         switch (_id) {
         case 0: _t->partWin(); break;
         case 1: _t->on_actionApropos_triggered(); break;
-        case 2: _t->reset_balle_position(); break;
-        case 3: _t->on_actionComment_jouer_triggered(); break;
-        case 4: _t->playerWin(); break;
-        case 5: _t->cpuWin(); break;
-        case 6: _t->on_actionAide_triggered(); break;
+        case 2: _t->on_actionComment_jouer_triggered(); break;
+        case 3: _t->on_actionAide_triggered(); break;
+        case 4: _t->reset_balle_position(); break;
+        case 5: _t->playerWin(); break;
+        case 6: _t->cpuWin(); break;
         default: ;
         }
     } else if (_c == QMetaObject::IndexOfMethod) {
