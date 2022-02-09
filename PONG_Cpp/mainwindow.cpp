@@ -179,3 +179,10 @@ void MainWindow::cpuWin() //fonction victoire de l'ordinateur
     reset_balle_position();
     resetIsOK = true;
 }
+
+void MainWindow::on_actionAide_triggered()
+{
+    QMessageBox::information(this, "Aide", "En cas de problème pour bouger votre raquette, appuyez sur TAB afin de reprendre le contrôle de celle-ci.", "OK");
+
+}
+
