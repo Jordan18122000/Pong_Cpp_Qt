@@ -12,7 +12,7 @@ namespace Ui {
 class MainWindow;
 }
 
-class Balle;
+class Balle;    //On initialise les classes qui sont appelés par notre MainWindow
 class Score;
 
 class MainWindow : public QMainWindow
@@ -21,34 +21,29 @@ class MainWindow : public QMainWindow
 private:
      bool WaitKey;
      bool resetIsOK = true;
+     Ui::MainWindow *ui;
+     Balle& m_balle;
+     Barre *player = new Barre();
+     Barre *computer = new Barre();
+     Score& score;
+     QGraphicsScene *scene = new QGraphicsScene(this);
 
 public:
     explicit MainWindow(QWidget *parent = 0);
     ~MainWindow();
      void keyPressEvent(QKeyEvent* event);
-     //void keyReleaseEvent(QKeyEvent *event);
 
 private slots:
     void on_actionApropos_triggered();
-    void reset_balle_position();
     void on_actionComment_jouer_triggered();
+    void on_actionAide_triggered();
+    void reset_balle_position();
     void playerWin();
     void cpuWin();
 
 
-    void on_actionAide_triggered();
-
 signals:
     void partWin();
-
-private:
-    Ui::MainWindow *ui;
-    Balle& m_balle;
-    Barre *player = new Barre();
-    Barre *computer = new Barre();
-    Score& score;
-    QGraphicsScene *scene = new QGraphicsScene(this);
-
 };
 
 #endif // MAINWINDOW_H
