@@ -36,6 +36,8 @@ private slots:
     void cpuWin();
 
 
+    void on_actionAide_triggered();
+
 signals:
     void partWin();
 
