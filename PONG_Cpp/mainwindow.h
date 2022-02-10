@@ -19,7 +19,7 @@ class MainWindow : public QMainWindow
 {
     Q_OBJECT
 private:
-     bool WaitKey;
+     bool WaitKey = true; // permet d'initialiser notre valeur afin de ne pas voir repartir la balle lors du premier point
      bool resetIsOK = true;
      Ui::MainWindow *ui;
      Balle& m_balle;

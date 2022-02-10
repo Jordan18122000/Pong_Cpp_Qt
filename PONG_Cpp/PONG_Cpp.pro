@@ -15,7 +15,6 @@ SOURCES += \
     balle.cpp \
     barre.cpp \
     configuration.cpp \
-    findujeu.cpp \
     gamemanager.cpp \
     main.cpp \
     mainwindow.cpp \
@@ -28,7 +27,6 @@ HEADERS += \
     balle.h \
     barre.h \
     configuration.h \
-    findujeu.h \
     gamemanager.h \
     mainwindow.h \
     score.h

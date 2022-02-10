@@ -33,8 +33,7 @@ MainWindow::MainWindow(QWidget *parent) :
     m_balle.setPos(this->size().width()/ 2, this->size().height()/2);
 
     scene->addItem(&score);
-    Findujeu *findujeu= new Findujeu();
-    scene->addItem(findujeu);
+    score.setPos(280,10);
     scene->addItem(player);
     scene->addItem(computer);
     scene->addItem(&m_balle);
@@ -128,14 +127,14 @@ void MainWindow::on_actionComment_jouer_triggered()
     QMessageBox *msgBox = new QMessageBox(this);
     msgBox->setWindowTitle("Comment jouer");
     msgBox->setText("Utilisez les touches fléchées Haut et Bas afin de déplacer la barre afin de frapper la balle");
-    msgBox->setInformativeText("Vous gagnez lorsque le ballon passe la barre de l'ordinateur");
+    msgBox->setInformativeText("Vous gagnez lorsque votre score sera de 5 points. Pour marquer il vous suffit de faire passer le ballon derrière la barre de l'ordinateur");
     msgBox->exec();
 }
 //notre fin du jeu par deux messages
 void MainWindow::playerWin() //fonction victoire du joueur
 {
     resetIsOK = false;
-    QMessageBox::information(this, "Player Win", "You have 10 points ! Good Job !");
+    QMessageBox::information(this, "Player Win", "You have 5 points ! Good Job !");
     score.reset();
     reset_balle_position();
     resetIsOK = true;
@@ -144,7 +143,7 @@ void MainWindow::playerWin() //fonction victoire du joueur
 void MainWindow::cpuWin() //fonction victoire de l'ordinateur
 {
     resetIsOK = false;
-    QMessageBox::information(this, "Computer Win", "CPU have 10 points ! You are a looser !");
+    QMessageBox::information(this, "Computer Win", "CPU have 5 points ! You are a looser !");
     score.reset();
     reset_balle_position();
     resetIsOK = true;

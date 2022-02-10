@@ -67,11 +67,6 @@ bool Balle::insideBoard(int x)
 
 }
 
-//QRectF Ball::boundingRect() const
-//{
-//    return QRectF(x(), y(), m_width, m_height);
-//}
-
 int Balle::width()
 {
     return m_width;
@@ -87,19 +82,11 @@ int Balle::speed()
     return m_speed;
 }
 
-/*
-void Balle::resetBall()
-{
-
-}
-*/
-
 void Balle::move()
 {
 
     //gestion de la collision avec les barres --> player et computer
     if(collidesWithItem(m_computer) || collidesWithItem(m_player)){
-//      dx = -dx;
         dx = -dx;
         //nous réalisons le modulo 3 pour les actions suivante:
         // --> direction haut, direction milieur et dirction bas
@@ -119,9 +106,6 @@ void Balle::move()
     if(this->y() < 10) {
         dy = -dy;
     }
-//    else {
-//    //    dy = -(rand() % 2) + 1; // random y
-//    }
 
     // Normal move de la balle
     setPos(x() + (m_speed * dx), y() + (m_speed * dy));

@@ -13,8 +13,9 @@ Score::Score() {
     playerpoints = 0;
 
     //gestion de l'affichage de notre score
-    setPlainText(QString("Player1: ") + QString::number(playerpoints) + QString("\nComputer: ") + QString::number(cpupoints));
-    setFont(QFont("times",16));
+    setPlainText(QString("Player: ") + QString::number(playerpoints)+ "  " + QString("Computer: ") + QString::number(cpupoints));
+    setFont(QFont("times",20)); //nous permet de gerer la taille est la police
+    setDefaultTextColor(QColor("white")); //nous permet de modifier la couleur de notre afficheur
     /*
     QTimer *timer = new QTimer();
     connect(timer, SIGNAL(timeout()), this, SLOT(move()));
@@ -23,19 +24,22 @@ Score::Score() {
 }
 
 void Score::refresh() {
-    setPlainText(QString("Player1: ") + QString::number(playerpoints) + QString("\nComputer: ") + QString::number(cpupoints));
+    //gestion de l'affichage de notre score
+    setPlainText(QString("Player: ") + QString::number(playerpoints)+ "  " + QString("Computer: ") + QString::number(cpupoints));
+    setFont(QFont("times",20)); //nous permet de gerer la taille est la police
+    setDefaultTextColor(QColor("white")); //nous permet de modifier la couleur de notre afficheur
 }
 
 void Score::pointcpu() {//gestion point cpu
     cpupoints++;
     refresh();
-    if(cpupoints == 10) //condition de victoire
+    if(cpupoints == 5) //condition de victoire
         emit cpuWinSignal();
 }
 void Score::pointplayer() {//gestion point player
     playerpoints++;
     refresh();
-    if(playerpoints == 10) //condition de victoire
+    if(playerpoints == 5) //condition de victoire
         emit playerWinSignal();
 }
 int Score::getcpuscore() {
