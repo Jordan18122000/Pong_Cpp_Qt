@@ -4,7 +4,6 @@
 #include <QGraphicsView>
 #include <QGraphicsRectItem>
 #include "balle.h"
-#include "findujeu.h"
 #include <QMessageBox>
 #include "score.h"
 
