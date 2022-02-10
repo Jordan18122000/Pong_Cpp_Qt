@@ -1,0 +1,16 @@
+release/lcdrange.o
+release/myrandom.o
+release/qstd.o
+release/balle.o
+release/barre.o
+release/configuration.o
+release/gamemanager.o
+release/main.o
+release/mainwindow.o
+release/score.o
+release/qrc_resources.o
+release/moc_lcdrange.o
+release/moc_balle.o
+release/moc_barre.o
+release/moc_mainwindow.o
+release/moc_score.o

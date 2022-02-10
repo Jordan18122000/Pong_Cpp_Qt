@@ -1,0 +1,16 @@
+debug/lcdrange.o
+debug/myrandom.o
+debug/qstd.o
+debug/balle.o
+debug/barre.o
+debug/configuration.o
+debug/gamemanager.o
+debug/main.o
+debug/mainwindow.o
+debug/score.o
+debug/qrc_resources.o
+debug/moc_lcdrange.o
+debug/moc_balle.o
+debug/moc_barre.o
+debug/moc_mainwindow.o
+debug/moc_score.o
